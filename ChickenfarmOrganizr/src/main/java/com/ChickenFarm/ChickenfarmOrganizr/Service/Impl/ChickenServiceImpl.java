@@ -1,8 +1,7 @@
 package com.ChickenFarm.ChickenfarmOrganizr.Service.Impl;
 
 import com.ChickenFarm.ChickenfarmOrganizr.Service.ChickenService;
-import com.ChickenFarm.ChickenfarmOrganizr.model.chicken;
-import com.ChickenFarm.ChickenfarmOrganizr.model.groupTable;
+import com.ChickenFarm.ChickenfarmOrganizr.model.Chicken;
 import com.ChickenFarm.ChickenfarmOrganizr.repository.ChickenRepository;
 import org.springframework.stereotype.Service;
 
@@ -11,26 +10,32 @@ import java.util.List;
 @Service
 public class ChickenServiceImpl implements ChickenService {
 
-     ChickenRepository chickenRepository;
-             groupTable groupTable;
+    final ChickenRepository chickenRepository;
 
-    public ChickenServiceImpl(ChickenRepository chickenRepository, groupTable groupTable){
+    public ChickenServiceImpl(ChickenRepository chickenRepository){
         this.chickenRepository = chickenRepository;
-        this.groupTable = groupTable;
+    }
+
+    public Chicken findByName(String name){
+        
+        return chickenRepository.findByName(name);
+    }
+    
+    @Override
+    public void saveChicken(Chicken chicken) {
+
+        chickenRepository.save(chicken);
 
     }
 
 
-    @Override
-    public chicken saveChicken(chicken chicken) {
+    public void updateChicken(Chicken chickenToUpdate) {
 
-        chicken.setGroup(groupTable);
-        return chickenRepository.save(chicken);
-
+        chickenRepository.save(chickenToUpdate);
     }
 
     @Override
-    public List<chicken> getAllChickens() {
+    public List<Chicken> getAllChickens() {
         return chickenRepository.findAll();
     }
 }

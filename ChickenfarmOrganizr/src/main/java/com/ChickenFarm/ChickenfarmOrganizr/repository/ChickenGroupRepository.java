@@ -1,15 +1,16 @@
 package com.ChickenFarm.ChickenfarmOrganizr.repository;
 
 
-import com.ChickenFarm.ChickenfarmOrganizr.model.Chicken;
+import com.ChickenFarm.ChickenfarmOrganizr.model.Group;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface ChickenRepository extends JpaRepository<Chicken, Integer> {
+public interface ChickenGroupRepository extends JpaRepository<Group, Integer> {
+
+    @Query("SELECT g FROM Group g WHERE g.groupName = ?1")
 
 
-    @Query("SELECT c FROM Chicken c WHERE c.chickenName = ?1 ")
-    Chicken findByName(String name);
+    Group findByName(String name);
 }
