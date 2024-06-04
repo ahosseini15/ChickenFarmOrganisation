@@ -19,14 +19,13 @@ public class VaccinationOfOneChicken {
     public static VaccinationOfOneChicken vaccinationOfOneChicken(VaccinationOfOneChickenDTO vaccinationOfOneChickenDTO) {
     Objects.requireNonNull(vaccinationOfOneChickenDTO);
 
-    VaccinationOfOneChicken vaccinationOfOneChicken = new VaccinationOfOneChicken();
+        VaccinationOfOneChicken vaccinationOfOneChicken = new VaccinationOfOneChicken();
+
          vaccinationOfOneChicken.voocId = vaccinationOfOneChickenDTO.getVoocId();
          vaccinationOfOneChicken.dateOfVaccination = vaccinationOfOneChickenDTO.getDateOfVaccination();
          vaccinationOfOneChicken.timeOfVaccination = vaccinationOfOneChickenDTO.getTimeOfVaccination();
          vaccinationOfOneChicken.crowdOfVaccination = vaccinationOfOneChickenDTO.getCrowdOfVaccination();
          vaccinationOfOneChicken.activeIngredient = vaccinationOfOneChickenDTO.getActiveIngredient();
-
-
 
 
 
@@ -44,6 +43,10 @@ public class VaccinationOfOneChicken {
     @ManyToOne
     @JoinColumn(name = "chicken_id")
     private Chicken chicken;
+
+    @ManyToOne
+    @JoinColumn(name = "group_id")
+    private Group group;
 
     @Column(name = "date_of_vaccination")
     private String dateOfVaccination;

@@ -22,6 +22,7 @@ public static EggOfChicken eggOfChicken(EggOfChickenDTO eggOfChickenDTO) {
     eggOfChicken.dateOfPutEgg = eggOfChickenDTO.getDateOfPutEgg();
     eggOfChicken.size = eggOfChickenDTO.getSize();
     eggOfChicken.timeOfPutEgg = eggOfChickenDTO.getTimeOfPutEgg();
+    eggOfChicken.croud = eggOfChickenDTO.getCroud();
 
     return  eggOfChicken;
 }
@@ -37,6 +38,10 @@ public static EggOfChicken eggOfChicken(EggOfChickenDTO eggOfChickenDTO) {
     @JoinColumn(name = "chicken_id")
     private Chicken chicken;
 
+    @ManyToOne
+    @JoinColumn(name = "group_id")
+    private Group group;
+
     @Column(name = "date_of_put_egg")
     private String dateOfPutEgg;
 
@@ -46,4 +51,6 @@ public static EggOfChicken eggOfChicken(EggOfChickenDTO eggOfChickenDTO) {
     @Column(name = "size")
     private String size;
 
+    @Column(name = "croud")
+    private String croud;
 }

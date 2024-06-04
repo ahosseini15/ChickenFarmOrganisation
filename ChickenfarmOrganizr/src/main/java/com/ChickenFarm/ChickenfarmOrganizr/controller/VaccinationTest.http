@@ -1,3 +1,10 @@
-GET http://localhost:8080/chicken/getAll
+POST http://localhost:8080/vaccinationOfOneChicken/addVaccinationGroup
 Content-Type: application/json
 
+{
+  "GroupName": "gruppe1",
+  "dateOfVaccination": "testToday",
+  "timeOfVaccination": "testNow",
+  "activeIngredient": "testIngredient",
+  "crowdOfVaccination": "testCroud"
+}
