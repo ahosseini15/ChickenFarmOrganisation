@@ -1,0 +1,13 @@
+POST http://localhost:8080/cChange/add
+Content-Type: application/json
+
+{ "hgocDTO": {
+
+},
+  "cChangeDTO": {
+    "chickenName": "Ali Chicken",
+    "newGroup": 43,
+    "dateOfChange": "2024-08-10"
+  }
+
+}

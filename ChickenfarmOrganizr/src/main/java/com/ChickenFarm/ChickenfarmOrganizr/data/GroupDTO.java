@@ -1,6 +1,6 @@
 package com.ChickenFarm.ChickenfarmOrganizr.data;
 
-import com.ChickenFarm.ChickenfarmOrganizr.model.Group;
+import com.ChickenFarm.ChickenfarmOrganizr.entity.Group;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NonNull;

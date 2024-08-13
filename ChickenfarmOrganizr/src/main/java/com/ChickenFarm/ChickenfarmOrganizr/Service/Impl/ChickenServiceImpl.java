@@ -1,41 +1,50 @@
 package com.ChickenFarm.ChickenfarmOrganizr.Service.Impl;
 
 import com.ChickenFarm.ChickenfarmOrganizr.Service.ChickenService;
-import com.ChickenFarm.ChickenfarmOrganizr.model.Chicken;
-import com.ChickenFarm.ChickenfarmOrganizr.repository.ChickenRepository;
+import com.ChickenFarm.ChickenfarmOrganizr.entity.Chicken;
+import com.ChickenFarm.ChickenfarmOrganizr.repository.ChickenRepo;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ChickenServiceImpl implements ChickenService {
 
-    final ChickenRepository chickenRepository;
+    final ChickenRepo chickenRepo;
 
-    public ChickenServiceImpl(ChickenRepository chickenRepository){
-        this.chickenRepository = chickenRepository;
+    public ChickenServiceImpl(ChickenRepo chickenRepo){
+        this.chickenRepo = chickenRepo;
     }
 
     public Chicken findByName(String name){
         
-        return chickenRepository.findByName(name);
+        return chickenRepo.findByName(name);
     }
-    
+
+
+    public Optional<Chicken> findById(int id){
+
+        return chickenRepo.findById(id);
+    }
+
+
+
     @Override
     public void saveChicken(Chicken chicken) {
 
-        chickenRepository.save(chicken);
+        chickenRepo.save(chicken);
 
     }
 
 
     public void updateChicken(Chicken chickenToUpdate) {
 
-        chickenRepository.save(chickenToUpdate);
+        chickenRepo.save(chickenToUpdate);
     }
 
     @Override
     public List<Chicken> getAllChickens() {
-        return chickenRepository.findAll();
+        return chickenRepo.findAll();
     }
 }

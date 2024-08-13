@@ -1,0 +1,2 @@
+GET http://localhost:8080/chicken/getAll
+Content-Type: application/json

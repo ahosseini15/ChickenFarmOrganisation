@@ -1,7 +1,6 @@
 package com.ChickenFarm.ChickenfarmOrganizr.Service;
 
-import com.ChickenFarm.ChickenfarmOrganizr.model.Chicken;
-import com.ChickenFarm.ChickenfarmOrganizr.repository.ChickenRepository;
+import com.ChickenFarm.ChickenfarmOrganizr.entity.Chicken;
 
 import java.util.List;
 

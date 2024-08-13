@@ -1,0 +1,11 @@
+
+POST http://localhost:8080/chicken/add
+Content-Type: application/json
+
+{
+  "groupId": 43,
+  "chickenName": "Ali Chicken",
+  "chickenGender": "Alex Gender",
+  "chickenDateOfBirth": "2023-06-05",
+  "chickenRace": "alexRace"
+}

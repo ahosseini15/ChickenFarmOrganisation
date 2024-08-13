@@ -1,0 +1,9 @@
+POST http://localhost:8080/eggs/addEggChicken
+Content-Type: application/json
+
+{
+"chickenName": "First Chicken",
+"dateOfPutEgg": "2023-06-05",
+"timeOfPutEgg": "12:34:56",
+"size": "large"
+}

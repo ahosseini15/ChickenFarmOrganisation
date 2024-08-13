@@ -1,11 +1,15 @@
 
 package com.ChickenFarm.ChickenfarmOrganizr.controller;
 
+import com.ChickenFarm.ChickenfarmOrganizr.Service.Impl.CChangeServiceImpl;
 import com.ChickenFarm.ChickenfarmOrganizr.Service.Impl.ChickenServiceImpl;
 import com.ChickenFarm.ChickenfarmOrganizr.Service.Impl.GroupServiceImpl;
+import com.ChickenFarm.ChickenfarmOrganizr.Service.Impl.HgocServiceImpl;
 import com.ChickenFarm.ChickenfarmOrganizr.data.ChickenDTO;
-import com.ChickenFarm.ChickenfarmOrganizr.model.Chicken;
-import com.ChickenFarm.ChickenfarmOrganizr.model.Group;
+import com.ChickenFarm.ChickenfarmOrganizr.entity.Chicken;
+import com.ChickenFarm.ChickenfarmOrganizr.entity.Group;
+import com.ChickenFarm.ChickenfarmOrganizr.entity.Hgoc;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -17,23 +21,40 @@ public class ChickenController {
 
    final  ChickenServiceImpl chickenService;
     final GroupServiceImpl groupService;
+    final CChangeServiceImpl chickenChangeService;
 
-    public ChickenController(ChickenServiceImpl chickenService, GroupServiceImpl groupService) {
+    final HgocServiceImpl hgocService;
+
+
+
+
+    @Autowired
+    public ChickenController(ChickenServiceImpl chickenService, GroupServiceImpl groupService, CChangeServiceImpl chickenChangeService, HgocServiceImpl hgocService) {
         this.chickenService = chickenService;
         this.groupService = groupService;
+        this.chickenChangeService = chickenChangeService;
+        this.hgocService = hgocService;
+
     }
 
     @PostMapping("/add")
     public String add(@RequestBody ChickenDTO chickenDTO) {
 
         Chicken chicken = Chicken.chicken(chickenDTO);
+        Group group = groupService.findById(chickenDTO.getGroupId());
 
-        Group group = groupService.findByName(chickenDTO.getChickenGroupName());
-
-
-           chicken.setGroup(group);
-
+        chicken.setGroup(group);
         chickenService.saveChicken(chicken);
+
+
+        Hgoc hgoc = new Hgoc();
+
+        hgoc.setChicken(chicken);
+        hgoc.setGroup(chicken.getGroup());
+        hgoc.setDateOfJoin(chicken.getChickenDateOfBirth());
+        hgocService.saveHgoc(hgoc);
+
+
         return "new chicken is added";
 
     }
@@ -58,7 +79,7 @@ public class ChickenController {
 
          return chickenService.getAllChickens()
                  .stream()
-                 .map(chickenEntity -> ChickenDTO.chickenDTO(chickenEntity))
+                 .map(ChickenDTO::chickenDTO)
                  .toList();
 
     }

@@ -1,0 +1,10 @@
+POST http://localhost:8080/vaccinations/addOneVaccination
+Content-Type: application/json
+
+{
+  "dateOfVaccination": "2024-06-08",
+  "timeOfVaccination": "13:28:06",
+  "activeIngredient": "testIngredient100",
+  "crowdOfVaccination": 100,
+  "chickenName": "Ali Chicken"
+}
