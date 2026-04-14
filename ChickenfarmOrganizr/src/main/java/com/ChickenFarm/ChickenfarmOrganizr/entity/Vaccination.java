@@ -1,7 +1,7 @@
 package com.ChickenFarm.ChickenfarmOrganizr.entity;
 
 
-import com.ChickenFarm.ChickenfarmOrganizr.data.VaccinationsDTO;
+import com.ChickenFarm.ChickenfarmOrganizr.data.AddVaccinationsDTO;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -18,16 +18,16 @@ import java.util.Objects;
 public class Vaccination {
 
 
-    public static Vaccination vaccinationOfOneChicken(VaccinationsDTO vaccinationsDTO) {
-    Objects.requireNonNull(vaccinationsDTO);
+    public static Vaccination vaccinationOfOneChicken(AddVaccinationsDTO addVaccinationsDTO) {
+    Objects.requireNonNull(addVaccinationsDTO);
 
         Vaccination vaccination = new Vaccination();
 
-         vaccination.voocId = vaccinationsDTO.getVoocId();
-         vaccination.dateOfVaccination = vaccinationsDTO.getDateOfVaccination();
-         vaccination.timeOfVaccination = vaccinationsDTO.getTimeOfVaccination();
-         vaccination.crowdOfVaccination = vaccinationsDTO.getCrowdOfVaccination();
-         vaccination.activeIngredient = vaccinationsDTO.getActiveIngredient();
+         vaccination.voocId = addVaccinationsDTO.getVoocId();
+         vaccination.dateOfVaccination = addVaccinationsDTO.getDateOfVaccination();
+         vaccination.timeOfVaccination = addVaccinationsDTO.getTimeOfVaccination();
+         vaccination.crowdOfVaccination = addVaccinationsDTO.getCrowdOfVaccination();
+         vaccination.activeIngredient = addVaccinationsDTO.getActiveIngredient();
 
 
 

@@ -1,6 +1,6 @@
 package com.ChickenFarm.ChickenfarmOrganizr.entity;
 
-import com.ChickenFarm.ChickenfarmOrganizr.data.ChickenDTO;
+import com.ChickenFarm.ChickenfarmOrganizr.data.CreateChickenDTO;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -16,18 +16,18 @@ public class Chicken {
 
 
 
-    public  static  Chicken chicken (ChickenDTO chickenDTO) {
+    public  static  Chicken chicken (CreateChickenDTO createChickenDTO) {
 
-        Objects.requireNonNull(chickenDTO);
+        Objects.requireNonNull(createChickenDTO);
 
         Chicken chicken = new Chicken();
 
-        chicken.chickenName = chickenDTO.getChickenName();
-        chicken.chickenGender = chickenDTO.getChickenGender();
-        chicken.chickenRace = chickenDTO.getChickenRace();
-        chicken.chickenDateOfBirth = chickenDTO.getChickenDateOfBirth();
-        chicken.chickenid = chickenDTO.getId();
-        chicken.chickenDateOfDeath = chickenDTO.getChickenDateOfDeath();
+        chicken.chickenName = createChickenDTO.getChickenName();
+        chicken.chickenGender = createChickenDTO.getChickenGender();
+        chicken.chickenRace = createChickenDTO.getChickenRace();
+        chicken.chickenDateOfBirth = createChickenDTO.getChickenDateOfBirth();
+        chicken.chickenid = createChickenDTO.getId();
+        chicken.chickenDateOfDeath = createChickenDTO.getChickenDateOfDeath();
 
         return chicken;
     }

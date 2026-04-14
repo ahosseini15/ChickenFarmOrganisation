@@ -1,6 +1,6 @@
 package com.ChickenFarm.ChickenfarmOrganizr.entity;
 
-import com.ChickenFarm.ChickenfarmOrganizr.data.EggsDTO;
+import com.ChickenFarm.ChickenfarmOrganizr.data.AddEggsDTO;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -15,16 +15,16 @@ import java.util.Objects;
 @Setter
 public class Eggs {
 
-public static Eggs eggOfChicken(EggsDTO eggsDTO) {
-    Objects.requireNonNull(eggsDTO);
+public static Eggs eggOfChicken(AddEggsDTO addEggsDTO) {
+    Objects.requireNonNull(addEggsDTO);
 
     Eggs eggs = new Eggs();
 
-    eggs.eocId = eggsDTO.getId();
-    eggs.dateOfPutEgg = eggsDTO.getDateOfPutEgg();
-    eggs.size = eggsDTO.getSize();
-    eggs.timeOfPutEgg = eggsDTO.getTimeOfPutEgg();
-    eggs.croud = eggsDTO.getCroud();
+    eggs.eocId = addEggsDTO.getId();
+    eggs.dateOfPutEgg = addEggsDTO.getDateOfPutEgg();
+    eggs.size = addEggsDTO.getSize();
+    eggs.timeOfPutEgg = addEggsDTO.getTimeOfPutEgg();
+    eggs.croud = addEggsDTO.getCroud();
 
     return eggs;
 }

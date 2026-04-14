@@ -1,6 +1,6 @@
 package zOUTOFSERVICE;
 
-import com.ChickenFarm.ChickenfarmOrganizr.Service.Impl.GroupServiceImpl;
+import com.ChickenFarm.ChickenfarmOrganizr.Service.Impl.CreateCreateGroupServiceImpl;
 import com.ChickenFarm.ChickenfarmOrganizr.entity.Group;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,11 +12,11 @@ import java.util.List;
 public class EggsOfGroupController {
 final EggsOfGroupServiceImpl eggsOfGroupService;
 
-final GroupServiceImpl groupService;
+final CreateCreateGroupServiceImpl groupService;
 
 
     public EggsOfGroupController(EggsOfGroupServiceImpl eggsOfGroupService,
-                                  GroupServiceImpl groupService
+                                  CreateCreateGroupServiceImpl groupService
                                 )
     {
         this.groupService = groupService;

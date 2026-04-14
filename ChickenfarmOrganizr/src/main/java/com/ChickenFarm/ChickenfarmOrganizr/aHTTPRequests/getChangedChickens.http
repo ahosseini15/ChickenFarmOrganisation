@@ -1,2 +1,2 @@
-GET http://localhost:8080/cChange/getAll
+GET http://localhost:8080/groupOfChickenChange/getAll
 Content-Type: application/json

@@ -1,6 +1,6 @@
 package com.ChickenFarm.ChickenfarmOrganizr.entity;
 
-  import com.ChickenFarm.ChickenfarmOrganizr.data.GroupDTO;
+  import com.ChickenFarm.ChickenfarmOrganizr.data.CreateGroupDTO;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NonNull;
@@ -16,10 +16,10 @@ import java.util.Objects;
 @Setter
 public class Group {
 
-    public static Group group(@NonNull GroupDTO groupDTO) {
-         Objects.requireNonNull(groupDTO);
+    public static Group group(@NonNull CreateGroupDTO createGroupDTO) {
+         Objects.requireNonNull(createGroupDTO);
          Group group = new Group();
-         group.setGroupName(groupDTO.getGroupName());
+         group.setGroupName(createGroupDTO.getGroupName());
 
          return group;
     }

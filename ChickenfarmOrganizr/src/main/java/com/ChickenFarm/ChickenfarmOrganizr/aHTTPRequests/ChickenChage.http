@@ -1,10 +1,10 @@
-POST http://localhost:8080/cChange/add
+POST http://localhost:8080/groupOfChickenChange/add
 Content-Type: application/json
 
-{ "hgocDTO": {
+{ "historyDTO": {
 
 },
-  "cChangeDTO": {
+  "groupOfChickenChangingDTO": {
     "chickenName": "Ali Chicken",
     "newGroup": 43,
     "dateOfChange": "2024-08-10"
