@@ -77,30 +77,29 @@ ChickenFarmOrganisation/
 ## Installation & Start
 
 1. Voraussetzungen
-- Java 17 oder höher
-- PostgreSQL Datenbank
-- Node.js (für das Frontend)
-- Maven
+ - Java 17 oder höher
+ - PostgreSQL Datenbank
+ - Node.js (für das Frontend)
+ - Maven
 
 2. Backend starten
-bash
+ bash
 
-cd ChickenfarmOrganizr
+ cd ChickenfarmOrganizr
 
-Datenbank-Konfiguration in application.properties anpassen
-(Standard: localhost:5432 mit Benutzer/Passwort anpassen)
+ Datenbank-Konfiguration in application.properties anpassen
+ (Standard: localhost:5432 mit Benutzer/Passwort anpassen)
+ 
+ ./mvnw spring-boot:run
 
-./mvnw spring-boot:run
-
-Backend läuft standardmäßig auf: http://localhost:8080
+ Backend läuft standardmäßig auf: http://localhost:8080
 
 3. Frontend starten
-cd ChickenFrontend/ChickenReactFrontend
+ cd ChickenFrontend/ChickenReactFrontend
+ npm install
+ npm start
 
-npm install
-npm start
-
-Frontend läuft standardmäßig auf: http://localhost:3000
+ Frontend läuft standardmäßig auf: http://localhost:3000
 
 ---
 
