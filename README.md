@@ -85,19 +85,19 @@ ChickenFarmOrganisation/
 2. Backend starten
  bash
 
- cd ChickenfarmOrganizr
+ - cd ChickenfarmOrganizr
 
  Datenbank-Konfiguration in application.properties anpassen
  (Standard: localhost:5432 mit Benutzer/Passwort anpassen)
- 
- ./mvnw spring-boot:run
+ +
+ - ./mvnw spring-boot:run
 
  Backend läuft standardmäßig auf: http://localhost:8080
 
 3. Frontend starten
- cd ChickenFrontend/ChickenReactFrontend
- npm install
- npm start
+ - cd ChickenFrontend/ChickenReactFrontend
+ - npm install
+ - npm start
 
  Frontend läuft standardmäßig auf: http://localhost:3000
 
