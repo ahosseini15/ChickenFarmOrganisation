@@ -146,201 +146,151 @@ Wichtige Tabellen:
 
 Dieses Projekt ist nur für **private und Bildungszwecke** gedacht.
 
+-----------------------------------------------------------------
 
 
-ChickenFarm Organizr
-A modern Spring Boot-based management system for a chicken farm.
-This tool allows you to efficiently manage chickens, groups, egg production, and vaccinations in a structured and transparent way.
+# ChickenFarm Organizr
 
-Features
-Chicken Management
+**English Version**
 
+A modern **Spring Boot**-based management system for a chicken farm.  
+With this tool you can clearly manage chickens, groups, egg production and vaccinations.
 
-Add new chickens with breed, gender, date of birth, etc.
+---
 
+## Features
 
-Assign chickens to groups
+- **Chicken Management**
+  - Create new chickens with breed, gender, date of birth, etc.
+  - Assign chickens to groups
+  - Update chicken data (e.g. date of death)
 
+- **Group Management**
+  - Create and manage chicken groups
 
-Update records (e.g., death date)
+- **Egg Recording**
+  - Record eggs from individual chickens (size, date, time)
+  - Record eggs from an entire group (quantity)
 
+- **Vaccination Management**
+  - Document vaccinations of individual chickens (active ingredient, dosage, date, time)
 
-Group Management
+- **Group Changes & History**
+  - Move chickens between groups
+  - Complete history of all events (entry, exit, eggs, vaccinations)
 
+- **Frontend**
+  - React + Material-UI interface
+  - Easy-to-use forms
+  - Overview tables with DataGrid
 
-Create and manage chicken groups
+---
 
+## Technology Stack
 
-Egg Tracking
+### Backend
+- Spring Boot 3.2.2
+- Spring Data JPA
+- PostgreSQL
+- Maven
+- Lombok
+- REST API with DTOs
 
+### Frontend
+- React
+- Material-UI (MUI)
+- Day.js (for date and time pickers)
+- Axios / Fetch API
 
-Record eggs per individual chicken (size, date, time)
+### Others
+- Maven Wrapper
+- Cross-Origin Support (`@CrossOrigin`)
 
+---
 
-Record eggs per group (quantity)
+## Project Structure
 
-
-Vaccination Management
-
-
-Document vaccinations for individual chickens (vaccine, dosage, date, time)
-
-
-Group Transfers & History
-
-
-Move chickens between groups
-
-
-Full history tracking of all events (entry, exit, eggs, vaccinations)
-
-
-Frontend
-
-
-React + Material UI interface
-
-
-Simple input forms for data entry
-
-
-Overview tables using DataGrid
-
-
-
-Technology Stack
-Backend
-
-
-Spring Boot 3.2.2
-
-
-Spring Data JPA
-
-
-PostgreSQL
-
-
-Maven
-
-
-Lombok
-
-
-REST API with DTOs
-
-
-Frontend
-
-
-React
-
-
-Material UI (MUI)
-
-
-Day.js (for date and time pickers)
-
-
-Axios / Fetch API
-
-
-Others
-
-
-Maven Wrapper
-
-
-Cross-Origin support (@CrossOrigin)
-
-
-
-Project Structure
 ChickenFarmOrganisation/
-├── ChickenfarmOrganizr/              # Backend (Spring Boot)
-│   ├── src/main/java/com/ChickenFarm/ChickenfarmOrganizr/
-│   ├── pom.xml
-│   └── mvnw / mvnw.cmd
-├── Studentsystem/studentfrontend/    # Frontend (React)
-│   ├── src/components/
-│   ├── public/
-│   └── package.json
-├── UMLDiagrammChickenfarm            # Database diagram
-└── README.md
-
-Installation & Setup
-Requirements
-
-
-Java 17 or higher
+* ├── ChickenfarmOrganizr/              ← Backend (Spring Boot)
+* │   ├── src/main/java/com/ChickenFarm/ChickenfarmOrganizr/
+* │   ├── pom.xml
+* │   └── mvnw / mvnw.cmd
+* │
+* ├── Studentsystem/studentfrontend/    ← Frontend (React)
+* │   ├── src/components/
+* │   ├── public/
+* │   └── package.json
+* │
+* ├── UMLDiagrammChickenfarm            ← Datenbank-Diagramm
+* └── README.md
 
 
-PostgreSQL database
+---
 
+## Installation & Getting Started
 
-Node.js
+### 1. Prerequisites
+- Java 17 or higher
+- PostgreSQL database
+- Node.js (for the frontend)
+- Maven
 
+### 2. Start Backend
 
-Maven
-
-
-
-Backend Setup
+bash
 cd ChickenfarmOrganizr
-Configure your database in application.properties
-(Default: localhost:5432)
-Start backend:
+
+# Adjust database configuration in application.properties
+# (Default: localhost:5432 with username/password)
+
 ./mvnw spring-boot:run
-Backend runs on:
-http://localhost:8080
-
-Frontend Setup
-cd ChickenFrontend/ChickenReactFrontendnpm installnpm start
-Frontend runs on:
-http://localhost:3000
-
-API Endpoints
-MethodEndpointDescriptionPOST/chicken/addCreate a new chickenGET/chicken/getAllGet all chickensPOST/eggs/addEggChickenAdd egg for a chickenPOST/eggs/addEggGroupAdd eggs for a groupPOST/vaccinations/addOneVaccinationAdd vaccination for a chickenPOST/groupOfChickenChange/addMove chicken to another groupGET/group/getAll2Get all groups
-
-Database
-The project uses PostgreSQL.
-Tables
 
 
-chicken
+### 3. Start Frontend
+
+- cd Studentsystem/studentfrontend
+- npm install
+- npm start
+---
+## Important API Endpoints
+
+| Method | Endpoint                              | Description                              |
+|--------|---------------------------------------|------------------------------------------|
+| POST   | `/chicken/add`                        | Add a new chicken                        |
+| GET    | `/chicken/getAll`                     | Get all chickens                         |
+| POST   | `/eggs/addEggChicken`                 | Add egg from a single chicken            |
+| POST   | `/eggs/addEggGroup`                   | Add eggs from an entire group            |
+| POST   | `/vaccinations/addOneVaccination`     | Add vaccination for one chicken          |
+| POST   | `/groupOfChickenChange/add`           | Change chicken to another group          |
+| GET    | `/group/getAll2`                      | Get all groups                           |
+---
+## Database
+
+The project uses **PostgreSQL**.  
+
+An Entity-Relationship Diagram (UML) can be found in the folder `ChickenFarmProjekt`.
+---
+### Important Tables
+
+- `chicken`
+- `group`
+- `eggs`
+- `vaccination`
+- `group_of_chicken_change`
+- `history`
+
+---
+## Todo / Open Points
+
+- [ ] Document Generator (`DocumentGenerator.java`)
+- [ ] Extended history view in the frontend
+- [ ] Authentication / Login system
+- [ ] Export functions (PDF / Excel)
+
+---
+
+## License
+
+This project is intended for **private and educational purposes only**.
 
 
-group
-
-
-eggs
-
-
-vaccination
-
-
-group_of_chicken_change
-
-
-history
-
-
-
-TODO
-
-
- Document generator (DocumentGenerator.java)
-
-
- Extended history view in frontend
-
-
- Authentication / login system
-
-
- Export features (PDF / Excel)
-
-
-
-License
-This project is intended for private and educational purposes only.
