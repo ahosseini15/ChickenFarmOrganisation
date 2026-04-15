@@ -238,12 +238,12 @@ ChickenFarmOrganisation/
 ### 2. Start Backend
 
 bash
-cd ChickenfarmOrganizr
+- cd ChickenfarmOrganizr
 
-# Adjust database configuration in application.properties
-# (Default: localhost:5432 with username/password)
+ - Adjust database configuration in application.properties
+ (Default: localhost:5432 with username/password)
 
-./mvnw spring-boot:run
+- ./mvnw spring-boot:run
 
 
 ### 3. Start Frontend
