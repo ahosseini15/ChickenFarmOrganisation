@@ -3,6 +3,7 @@
 Ein modernes **Spring Boot**-basiertes Verwaltungssystem für eine Hühnerfarm.  
 Mit diesem Tool kannst du Hühner, Gruppen, Eierproduktion und Impfungen übersichtlich verwalten und protokollieren.
 
+
 ---
 
 ## Funktionen
