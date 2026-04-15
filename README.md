@@ -58,18 +58,18 @@ Sonstiges
 ## Projektstruktur
 
 ChickenFarmOrganisation/
-├── ChickenfarmOrganizr/              ← Backend (Spring Boot)
-│   ├── src/main/java/com/ChickenFarm/ChickenfarmOrganizr/
-│   ├── pom.xml
-│   └── mvnw / mvnw.cmd
-│
-├── Studentsystem/studentfrontend/    ← Frontend (React)
-│   ├── src/components/
-│   ├── public/
-│   └── package.json
-│
-├── UMLDiagrammChickenfarm            ← Datenbank-Diagramm
-└── README.md
+ * ├── ChickenfarmOrganizr/              ← Backend (Spring Boot)
+ *│   ├── src/main/java/com/ChickenFarm/ChickenfarmOrganizr/
+ *│   ├── pom.xml
+* │   └── mvnw / mvnw.cmd
+* │
+* ├── Studentsystem/studentfrontend/    ← Frontend (React)
+* │   ├── src/components/
+* │   ├── public/
+* │   └── package.json
+* │
+* ├── UMLDiagrammChickenfarm            ← Datenbank-Diagramm
+* └── README.md
 
 
 ---
@@ -87,8 +87,8 @@ bash
 
 cd ChickenfarmOrganizr
 
-# Datenbank-Konfiguration in application.properties anpassen
-# (Standard: localhost:5432 mit Benutzer/Passwort anpassen)
+Datenbank-Konfiguration in application.properties anpassen
+(Standard: localhost:5432 mit Benutzer/Passwort anpassen)
 
 ./mvnw spring-boot:run
 
