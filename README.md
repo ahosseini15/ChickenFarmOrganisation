@@ -58,9 +58,9 @@ Sonstiges
 ## Projektstruktur
 
 ChickenFarmOrganisation/
- * ├── ChickenfarmOrganizr/              ← Backend (Spring Boot)
- *│   ├── src/main/java/com/ChickenFarm/ChickenfarmOrganizr/
- *│   ├── pom.xml
+* ├── ChickenfarmOrganizr/              ← Backend (Spring Boot)
+* │   ├── src/main/java/com/ChickenFarm/ChickenfarmOrganizr/
+* │   ├── pom.xml
 * │   └── mvnw / mvnw.cmd
 * │
 * ├── Studentsystem/studentfrontend/    ← Frontend (React)
